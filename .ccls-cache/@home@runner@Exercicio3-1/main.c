@@ -39,7 +39,7 @@ void getFunction(int posicaoPrimera, int posicaoSegunda, char *letra,
     contadorTemp = contadorTemp + 1;    
   }
   if (valorDigitado % 2 == 0) {
-    if (contadorTemp == 6) {
+    if (contadorTemp == (valorDigitado/2)+1) {
       printf("%s", " ");
     }  
   }
