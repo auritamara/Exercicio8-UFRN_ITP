@@ -6,22 +6,11 @@ void getFunction(int posicaoPrimera, int posicaoSegunda, char *letra,
                  int valorMeio, int valorDigitado) {
   int contador;
   int contadorTemp = 0;
-  // Declara o array de string
   char *linha = malloc(sizeof(char) * (posicaoSegunda + 1));
   linha[0] = 0;
   for (contador = 0; contador <= posicaoSegunda; contador++) {    
     if (contador == posicaoPrimera) {      
-      if (valorDigitado % 2 == 0) {            
-        if (contador == valorMeio - 1) {
-          linha = strcat(linha, " ");
-        } else {
-          if (contador == valorMeio - 2){        
-          }          
-          linha = strcat(linha, letra);
-        }
-      } else {
-        linha = strcat(linha, letra);        
-      }
+      linha = strcat(linha, letra);
     } else if (contador == posicaoSegunda - 1) {
       if (valorDigitado % 2 == 0) {
         if (contador == valorMeio - 1) {
@@ -32,7 +21,6 @@ void getFunction(int posicaoPrimera, int posicaoSegunda, char *letra,
       } else {
         linha = strcat(linha, letra);
       }
-
     } else {
       linha = strcat(linha, " ");
     }    
@@ -69,10 +57,8 @@ int main(void) {
       } else {
         contadorMeio = contadorMeio + 1;
       }
-      // contadorMeio = contadorMeio + 1;
       valorRealDepois = valorReal;
       posicaoLetra = valorReal - 2;
-      // printf("%d", contadorMeio);
       getFunction(posicaoLetra, valorReal, letra, valorMeio, valorDigitado);
     } else {
       valorRealDepois = valorRealDepois + 1;
