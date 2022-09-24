@@ -11,13 +11,11 @@ void getFunction(int posicaoPrimera, int posicaoSegunda, char *letra,
   linha[0] = 0;
   for (contador = 0; contador <= posicaoSegunda; contador++) {    
     if (contador == posicaoPrimera) {      
-      if (valorDigitado % 2 == 0) {        
+      if (valorDigitado % 2 == 0) {            
         if (contador == valorMeio - 1) {
           linha = strcat(linha, " ");
         } else {
-          if (contador == valorMeio - 2){
-            
-            //printf("%d, %d, %d", contador, valorMeio - 1, contadorTemp);
+          if (contador == valorMeio - 2){        
           }          
           linha = strcat(linha, letra);
         }
@@ -26,7 +24,7 @@ void getFunction(int posicaoPrimera, int posicaoSegunda, char *letra,
       }
     } else if (contador == posicaoSegunda - 1) {
       if (valorDigitado % 2 == 0) {
-        if (contador == valorMeio - 2) {
+        if (contador == valorMeio - 1) {
           linha = strcat(linha, " ");
         } else {
           linha = strcat(linha, letra);
@@ -37,7 +35,13 @@ void getFunction(int posicaoPrimera, int posicaoSegunda, char *letra,
 
     } else {
       linha = strcat(linha, " ");
-    }
+    }    
+    contadorTemp = contadorTemp + 1;    
+  }
+  if (valorDigitado % 2 == 0) {
+    if (contadorTemp == 6) {
+      printf("%s", " ");
+    }  
   }
   printf("%s\n", linha);
 }
